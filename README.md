@@ -54,7 +54,7 @@ The difficult part then is to produce the merged filed.
 Chech this [Grunt](http://gruntjs.com/) task : [grunt-angular-combine}(https://github.com/astik/grunt-angular-combine).
 This plugin was made especially for this need : producing the merged HTML file.
 
-You'll find all the documention to use it on the [grunt-angulr-combine getting started](https://github.com/astik/grunt-angular-combine#getting-started) page.
+You'll find all the documention to use it on the [grunt-angular-combine getting started](https://github.com/astik/grunt-angular-combine#getting-started) page.
 
 ## Release History
 
