@@ -1,6 +1,6 @@
 {
   "name": "angular-combine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./dist/angular-combine.js",
   "description": "Allow loading of merge templates into a single HTML file.",
   "keywords": [
@@ -11,7 +11,7 @@
     "$templateCache"
   ],
   "dependencies": {
-    "angular": "~1.0.8"
+    "angular": "~1.2"
   },
   "license": "MIT"
 }

@@ -1,0 +1,17 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+  "-W088": false, // Creating global 'for' variable. Should be 'for (var k ...'. = https://github.com/jshint/jshint/issues/1016
+  "globals": {
+    "angular": false
+  }
+}
