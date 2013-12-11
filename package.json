@@ -1,0 +1,46 @@
+{
+  "name": "angular-combine",
+  "description": "Allow loading of merge templates into a single HTML file.",
+  "version": "0.1.1",
+  "homepage": "https://github.com/astik/angular-combine",
+  "author": {
+    "name": "Romain Gonord",
+    "email": "romain.gonord.opensource@neteyes.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/astik/angular-combine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/astik/angular-combine/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/astik/grunt-angular-combine/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "./dist/angular-combine.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "angular",
+    "combine",
+    "performance",
+    "partials",
+    "$templateCache"
+  ]
+}
