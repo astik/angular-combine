@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularCombineViewApp', [ 'angularCombine' ]).config(function ($routeProvider) {
+angular.module('angularCombineViewApp', [ 'ngRoute', 'angularCombine' ]).config(function ($routeProvider) {
 	$routeProvider.when('/', {
 		templateUrl : 'views/main.html',
 		controller : 'MainCtrl'
