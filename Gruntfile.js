@@ -10,6 +10,8 @@
 
 module.exports = function(grunt) {
 
+	require('load-grunt-tasks')(grunt);
+	require('time-grunt')(grunt);
 	var banner = '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n';
 
 	// Project configuration.
@@ -27,7 +29,7 @@ module.exports = function(grunt) {
 			tests : [ 'tmp', 'dist' ],
 		},
 
-		ngmin : {
+		ngAnnotate : {
 			dist : {
 				files : [ {
 					expand : true,
@@ -65,16 +67,16 @@ module.exports = function(grunt) {
 							'.tmp/angular-combine-decorator.js' ]
 				}
 			}
+		},
+
+		bump : {
+			options : {
+				files : [ 'package.json', 'bower.json' ],
+				commitFiles : [ 'package.json', 'bower.json' ]
+			}
 		}
 	});
 
-	// These plugins provide necessary tasks.
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-ngmin');
-
 	// By default, lint and run all tests.
-	grunt.registerTask('default', [ 'clean', 'jshint', 'ngmin', 'uglify' ]);
-
+	grunt.registerTask('default', [ 'clean', 'jshint', 'ngAnnotate', 'uglify' ]);
 };
