@@ -1,5 +1,5 @@
 To run this example :
-npm install && bower install
+npm install
 grunt server
 
 Check the console :
