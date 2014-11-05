@@ -40,26 +40,8 @@ module.exports = function(grunt) {
 			}
 		},
 
-		uglify : {
-			options : {
-				banner : banner
-			},
-			min : {
-				options : {
-					mangle : true
-				},
-				files : {
-					'dist/angular-combine.min.js' : [
-							'.tmp/angular-combine-app.js',
-							'.tmp/angular-combine-config.js',
-							'.tmp/angular-combine-decorator.js' ]
-				}
-			},
-			concat : {
-				options : {
-					mangle : false,
-					beautify : true
-				},
+		concat : {
+			dist : {
 				files : {
 					'dist/angular-combine.js' : [
 							'.tmp/angular-combine-app.js',
@@ -69,15 +51,49 @@ module.exports = function(grunt) {
 			}
 		},
 
+		uglify : {
+			min : {
+				options : {
+					mangle : true
+				},
+				expand : true,
+				cwd : 'dist',
+				src : '*.js',
+				dest : 'dist',
+				ext : '.min.js'
+			}
+		},
+
 		bump : {
 			options : {
 				files : [ 'package.json', 'bower.json' ],
 				commitFiles : [ 'package.json', 'bower.json' ],
 				pushTo : 'origin'
 			}
+		},
+
+		removelogging : {
+			dist : {
+				src : 'dist/angular-combine.js',
+				dest : 'dist/angular-combine-without-console.js'
+			}
+		},
+
+		usebanner : {
+			dist : {
+				options : {
+					position : 'top',
+					banner : banner,
+					linebreak : false
+				},
+				expand : true,
+				cwd : 'dist',
+				src : '*.js',
+				dest : 'dist'
+			}
 		}
 	});
 
 	// By default, lint and run all tests.
-	grunt.registerTask('default', [ 'clean', 'jshint', 'ngAnnotate', 'uglify' ]);
+	grunt.registerTask('default', [ 'clean', 'jshint', 'ngAnnotate', 'concat', 'removelogging', 'uglify', 'usebanner' ]);
 };
