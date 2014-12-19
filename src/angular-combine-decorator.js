@@ -19,7 +19,8 @@ angular.module('angularCombine').config(function ($provide) {
 				return combinedTplPromise.then(function (response) {
 					return {
 						status : response.status,
-						data : origGetMethod(url)
+						data : origGetMethod(url),
+						headers: response.headers
 					};
 				});
 			};

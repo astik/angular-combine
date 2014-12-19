@@ -1,4 +1,4 @@
-/*! angular-combine - v0.1.3 - 2014-11-05 */
+/*! angular-combine - v0.1.3 - 2014-12-19 */
 'use strict';
 
 angular.module('angularCombine', []);
@@ -41,7 +41,8 @@ angular.module('angularCombine').config(["$provide", function ($provide) {
 				return combinedTplPromise.then(function (response) {
 					return {
 						status : response.status,
-						data : origGetMethod(url)
+						data : origGetMethod(url),
+						headers: response.headers
 					};
 				});
 			};
