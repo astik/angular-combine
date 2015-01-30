@@ -18,7 +18,7 @@ Once the plugin has been installed, it may be enabled inside your application by
 angular.module('myApp', ['angularCombine']);
 ```
 
-Then you need to configure a specific service to help Angular in finding the merged templates :
+Then you need to configure a specific service to help Angular in finding the merged templates. When the templateCache is asked for a template it will use the regex in the first argument to determine if there is a combined file that can be loaded to gather that template. The second argument is the url/path to the combined template to load. Example Below:
 
 ```js
 angular.module('myApp').config(function (angularCombineConfigProvider) {
