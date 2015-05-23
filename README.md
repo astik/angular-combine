@@ -1,5 +1,7 @@
 # angular-combine
 
+[![Build Status: Linux](https://travis-ci.org/astik/angular-combine.svg?branch=master)](https://travis-ci.org/astik/angular-combine)
+
 > Allow loading of merge templates into a single HTML file.
 
 
