@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 	require('time-grunt')(grunt);
 
@@ -13,8 +13,8 @@ module.exports = function (grunt) {
 		yeoman : config,
 		watch : {
 			styles : {
-				files : [ '<%= yeoman.app %>/styles/{,*/}*.css' ],
-				tasks : [ 'copy:styles', 'autoprefixer' ]
+				files : [ '<%= yeoman.app %>/styles/*.css' ],
+				tasks : [ 'autoprefixer' ]
 			},
 			html : {
 				files : [ '<%= yeoman.app %>/views/**/*.html' ],
@@ -33,8 +33,8 @@ module.exports = function (grunt) {
 			dist : {
 				files : [ {
 					expand : true,
-					cwd : '<%= yeoman.tmp %>/styles/',
-					src : '{,*/}*.css',
+					cwd : '<%= yeoman.app %>/styles/',
+					src : '*.css',
 					dest : '<%= yeoman.tmp %>/styles/'
 				} ]
 			}
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
 			livereload : {
 				options : {
 					open : true,
-					middleware : function (connect, options) {
+					middleware : function(connect, options) {
 						var middlewares = [];
 						middlewares.push(connect().use('/angular-combine/dist', connect.static('../dist')));
 						middlewares.push(connect.static(config.tmp));
@@ -68,17 +68,6 @@ module.exports = function (grunt) {
 			},
 			all : [ 'Gruntfile.js', '<%= yeoman.app %>/scripts/{,*/}*.js' ]
 		},
-		copy : {
-			styles : {
-				expand : true,
-				cwd : '<%= yeoman.app %>/styles',
-				dest : '<%= yeoman.tmp %>/styles/',
-				src : '{,*/}*.css'
-			}
-		},
-		concurrent : {
-			server : [ 'copy:styles', 'angularCombine:server' ]
-		},
 		angularCombine : {
 			server : {
 				files : [ {
@@ -92,7 +81,7 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('server', function () {
-		grunt.task.run([ 'clean:server', 'concurrent:server', 'autoprefixer', 'connect:livereload', 'watch' ]);
+	grunt.registerTask('server', function() {
+		grunt.task.run([ 'clean', 'angularCombine', 'autoprefixer', 'connect', 'watch' ]);
 	});
 };
