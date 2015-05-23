@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
 	require('load-grunt-tasks')(grunt);
 	require('time-grunt')(grunt);
-	var banner = '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n';
+	var banner = '/*! <%= pkg.name %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n';
 
 	// Project configuration.
 	grunt.initConfig({
