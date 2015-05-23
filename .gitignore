@@ -4,3 +4,5 @@ tmp
 .project
 .tmp
 bower_components
+.grunt
+_SpecRunner.html

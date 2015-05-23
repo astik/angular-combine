@@ -35,6 +35,10 @@ You can add as many conf as you need.
  
 ## The "angularCombine" concept
 
+
+
+### Theory
+
 Angular can load templates within an HTML by parsing script attribute with *text/ng-template* as type :
 
 ```html
@@ -72,9 +76,33 @@ You'll find all the documention to use it on the [grunt-angular-combine getting 
 - v0.1.3 : release process is operational with good semserv versioning (no new feature)
 - v0.1.4 : distribution available withou console (smaller files) + compatibility for Angular > 1.3.6
 
+
+
+## Development
+
+
+
 ### How to release
 
 ```
 grunt
 grunt bump
 ```
+
+
+
+### How to test
+
+Tests in realtime into CLI :
+
+```
+grunt test
+```
+
+Tests into your browser :
+
+```
+grunt jasmine:test:build
+```
+
+Then, open the newly create file _SpecRunner.html into your browser.

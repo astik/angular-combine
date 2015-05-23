@@ -40,6 +40,7 @@ angular.module('angularCombine').config(function ($provide) {
 			}
 			return origGetMethod(url);
 		};
+
 		return $delegate;
 	} ]);
 });

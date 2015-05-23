@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg : require('./bower.json'),
+
 		jshint : {
 			all : [ 'Gruntfile.js', 'src/*.js' ],
 			options : {
@@ -43,10 +44,7 @@ module.exports = function(grunt) {
 		concat : {
 			dist : {
 				files : {
-					'dist/angular-combine.js' : [
-							'.tmp/angular-combine-app.js',
-							'.tmp/angular-combine-config.js',
-							'.tmp/angular-combine-decorator.js' ]
+					'dist/angular-combine.js' : [ '.tmp/angular-combine-app.js', '.tmp/angular-combine-config.js', '.tmp/angular-combine-decorator.js' ]
 				}
 			}
 		},
@@ -91,9 +89,29 @@ module.exports = function(grunt) {
 				src : '*.js',
 				dest : 'dist'
 			}
-		}
+		},
+
+		jasmine : {
+			test : {
+				src : 'src/*.js',
+				options : {
+					specs : 'test/spec/*Spec.js',
+					vendor : [ //
+					"bower_components/angular/angular.js",//
+					"bower_components/angular-mocks/angular-mocks.js" //
+					]
+				}
+			}
+		},
+
+		watch : {
+			test : {
+				files : [ 'src/*.js' ],
+				tasks : [ 'jasmine' ]
+			}
+		},
 	});
 
-	// By default, lint and run all tests.
 	grunt.registerTask('default', [ 'clean', 'jshint', 'ngAnnotate', 'concat', 'removelogging', 'uglify', 'usebanner' ]);
+	grunt.registerTask('test', [ 'jasmine', 'watch:test' ]);
 };
