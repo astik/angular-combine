@@ -2,7 +2,10 @@
 
 > Allow loading of merge templates into a single HTML file.
 
+
+
 ## Getting Started
+
 This plugin requires Bower
 
 If you haven't used [Bower](http://bower.io/) before, be sure to check out the [Getting Started](http://bower.io/#installing-bower) guide.
@@ -49,6 +52,10 @@ So, it may be interesting to have a way to merge partials into a single HTML fil
 
 The difficult part then is to produce the merged filed.
 
+For the record, this plugin follows a Gist Vojta started a while ago : https://gist.github.com/vojtajina/3354046.
+
+
+
 ### Grunt to the rescue
 
 Chech this [Grunt](http://gruntjs.com/) task : [grunt-angular-combine}(https://github.com/astik/grunt-angular-combine).
@@ -56,7 +63,18 @@ This plugin was made especially for this need : producing the merged HTML file.
 
 You'll find all the documention to use it on the [grunt-angular-combine getting started](https://github.com/astik/grunt-angular-combine#getting-started) page.
 
+
+
 ## Release History
 
 - 0.1.0 : initial version
+- 0.1.1 : clean release process (no new feature)
+- v0.1.3 : release process is operational with good semserv versioning (no new feature)
+- v0.1.4 : distribution available withou console (smaller files) + compatibility for Angular > 1.3.6
 
+### How to release
+
+```
+grunt
+grunt bump
+```
