@@ -34,7 +34,7 @@ angular.module('angularCombine').config(function ($provide) {
 		$delegate.get = function (url) {
 			for (idx in angularCombineConfig) {
 				conf = angularCombineConfig[idx];
-				if (conf.regexp.test(url)) {
+				if (conf.regexp && conf.regexp.test(url)) {
 					return conf.load(url);
 				}
 			}
