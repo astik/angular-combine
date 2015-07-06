@@ -16,5 +16,14 @@
   "devDependencies": {
     "angular-mocks": "^1.2"
   },
+  "ignore": [
+    "demo",
+    "src",
+    "test",
+    ".gitignore",
+    ".jshintrc",
+    ".travis.yml",
+    "Gruntfile.js"
+  ],
   "license": "MIT"
 }
