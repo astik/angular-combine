@@ -1,4 +1,4 @@
-/*! angular-combine - v0.1.3 - 2014-12-19 */
+/*! angular-combine - 2015-07-06 */
 'use strict';
 
 angular.module('angularCombine', []);
@@ -56,12 +56,13 @@ angular.module('angularCombine').config(["$provide", function ($provide) {
 		$delegate.get = function (url) {
 			for (idx in angularCombineConfig) {
 				conf = angularCombineConfig[idx];
-				if (conf.regexp.test(url)) {
+				if (conf.regexp && conf.regexp.test(url)) {
 					return conf.load(url);
 				}
 			}
 			return origGetMethod(url);
 		};
+
 		return $delegate;
 	} ]);
 }]);
