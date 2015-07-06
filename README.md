@@ -64,7 +64,7 @@ For the record, this plugin follows a Gist Vojta started a while ago : https://g
 
 ### Grunt to the rescue
 
-Chech this [Grunt](http://gruntjs.com/) task : [grunt-angular-combine}(https://github.com/astik/grunt-angular-combine).
+Chech this [Grunt](http://gruntjs.com/) task : [grunt-angular-combine](https://github.com/astik/grunt-angular-combine).
 This plugin was made especially for this need : producing the merged HTML file.
 
 You'll find all the documention to use it on the [grunt-angular-combine getting started](https://github.com/astik/grunt-angular-combine#getting-started) page.
