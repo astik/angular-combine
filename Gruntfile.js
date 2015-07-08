@@ -19,10 +19,26 @@ module.exports = function(grunt) {
 		pkg : require('./bower.json'),
 
 		jshint : {
-			all : [ 'Gruntfile.js', 'src/*.js' ],
 			options : {
 				jshintrc : '.jshintrc',
 			},
+			all : [ 'Gruntfile.js', 'src/*.js' ]
+		},
+
+		jscs: {
+			options: {
+				config: ".jscsrc"
+			},
+			all: {
+				src: [ 'src/*.js' ]
+			}
+		},
+
+		jsbeautifier: {
+			options: {
+				config: '.jsbeautifier'
+			},
+			all: [ 'src/*.js' ]
 		},
 
 		// Before generating any new files, remove any previously-created files.
@@ -112,6 +128,6 @@ module.exports = function(grunt) {
 		},
 	});
 
-	grunt.registerTask('default', [ 'clean', 'jshint', 'ngAnnotate', 'concat', 'removelogging', 'uglify', 'usebanner' ]);
+	grunt.registerTask('default', [ 'clean', 'jsbeautifier', 'jshint', 'jscs', 'ngAnnotate', 'concat', 'removelogging', 'uglify', 'usebanner' ]);
 	grunt.registerTask('test', [ 'jasmine', 'watch:test' ]);
 };
