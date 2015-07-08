@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularCombine').config(function($provide) {
-	$provide.decorator('$templateCache', ['$delegate', '$http', '$injector', function($delegate, $http, $injector) {
+	$provide.decorator('$templateCache', function($delegate, $http, $injector) {
 		var origGetMethod = $delegate.get;
 		var idx, conf;
 		var angularCombineConfig = $injector.get('angularCombineConfig');
@@ -42,5 +42,5 @@ angular.module('angularCombine').config(function($provide) {
 		};
 
 		return $delegate;
-	}]);
+	});
 });

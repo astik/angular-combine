@@ -23,7 +23,7 @@ angular.module('angularCombine').provider('angularCombineConfig', function() {
 'use strict';
 
 angular.module('angularCombine').config(["$provide", function($provide) {
-	$provide.decorator('$templateCache', ['$delegate', '$http', '$injector', function($delegate, $http, $injector) {
+	$provide.decorator('$templateCache', ["$delegate", "$http", "$injector", function($delegate, $http, $injector) {
 		var origGetMethod = $delegate.get;
 		var idx, conf;
 		var angularCombineConfig = $injector.get('angularCombineConfig');
