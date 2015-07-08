@@ -1,47 +1,47 @@
-/*! angular-combine - 2015-07-06 */
+/*! angular-combine - 2015-07-08 */
 'use strict';
 
 angular.module('angularCombine', []);
 
 'use strict';
 
-angular.module('angularCombine').provider('angularCombineConfig', function () {
+angular.module('angularCombine').provider('angularCombineConfig', function() {
 	var config = [];
 
-	this.addConf = function (regexp, combinedUrl) {
-		console.log("Add conf to angularCombine", regexp, combinedUrl);
+	this.addConf = function(regexp, combinedUrl) {
+		console.log('Add conf to angularCombine', regexp, combinedUrl);
 		config.push({
-			regexp : regexp,
-			combinedUrl : combinedUrl
+			regexp: regexp,
+			combinedUrl: combinedUrl
 		});
 	};
-	this.$get = function () {
+	this.$get = function() {
 		return config;
 	};
 });
 
 'use strict';
 
-angular.module('angularCombine').config(["$provide", function ($provide) {
-	$provide.decorator('$templateCache', [ '$delegate', '$http', '$injector', function ($delegate, $http, $injector) {
+angular.module('angularCombine').config(["$provide", function($provide) {
+	$provide.decorator('$templateCache', ['$delegate', '$http', '$injector', function($delegate, $http, $injector) {
 		var origGetMethod = $delegate.get;
 		var idx, conf;
 		var angularCombineConfig = $injector.get('angularCombineConfig');
 
-		var loadCombinedTemplates = function (combinedUrl) {
+		var loadCombinedTemplates = function(combinedUrl) {
 			var combinedTplPromise;
-			return function (url) {
+			return function(url) {
 				if (!combinedTplPromise) {
 					console.log('fetching all templates combined into ', combinedUrl);
-					combinedTplPromise = $http.get(combinedUrl).then(function (response) {
+					combinedTplPromise = $http.get(combinedUrl).then(function(response) {
 						$injector.get('$compile')(response.data);
 						return response;
 					});
 				}
-				return combinedTplPromise.then(function (response) {
+				return combinedTplPromise.then(function(response) {
 					return {
-						status : response.status,
-						data : origGetMethod(url),
+						status: response.status,
+						data: origGetMethod(url),
 						headers: response.headers
 					};
 				});
@@ -53,7 +53,7 @@ angular.module('angularCombine').config(["$provide", function ($provide) {
 			conf.load = loadCombinedTemplates(conf.combinedUrl);
 		}
 
-		$delegate.get = function (url) {
+		$delegate.get = function(url) {
 			for (idx in angularCombineConfig) {
 				conf = angularCombineConfig[idx];
 				if (conf.regexp && conf.regexp.test(url)) {
@@ -64,5 +64,5 @@ angular.module('angularCombine').config(["$provide", function ($provide) {
 		};
 
 		return $delegate;
-	} ]);
+	}]);
 }]);

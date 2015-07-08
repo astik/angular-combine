@@ -1,16 +1,16 @@
 'use strict';
 
-angular.module('angularCombine').provider('angularCombineConfig', function () {
+angular.module('angularCombine').provider('angularCombineConfig', function() {
 	var config = [];
 
-	this.addConf = function (regexp, combinedUrl) {
-		console.log("Add conf to angularCombine", regexp, combinedUrl);
+	this.addConf = function(regexp, combinedUrl) {
+		console.log('Add conf to angularCombine', regexp, combinedUrl);
 		config.push({
-			regexp : regexp,
-			combinedUrl : combinedUrl
+			regexp: regexp,
+			combinedUrl: combinedUrl
 		});
 	};
-	this.$get = function () {
+	this.$get = function() {
 		return config;
 	};
 });
