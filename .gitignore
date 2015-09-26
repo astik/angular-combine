@@ -6,3 +6,4 @@ tmp
 bower_components
 .grunt
 _SpecRunner.html
+.DS_Store

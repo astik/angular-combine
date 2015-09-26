@@ -86,11 +86,9 @@ You'll find all the documention to use it on the [grunt-angular-combine getting 
 
 ### How to release
 
-```
-grunt
-grunt bump
-```
+Before release, don't forget to do a full build !
 
+The project use [grunt-release](https://github.com/geddski/grunt-release) for its versionning an tag process.
 
 
 ### How to test
