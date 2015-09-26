@@ -85,7 +85,8 @@ module.exports = function(grunt) {
 
 		release : {
 			options : {
-				tagName : 'v<%= version %>'
+				tagName : 'v<%= version %>',
+				additionalFiles: ['bower.json']
 			}
 		},
 
