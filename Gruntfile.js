@@ -132,6 +132,6 @@ module.exports = function(grunt) {
 		},
 	});
 
-	grunt.registerTask('default', [ 'clean', 'jsbeautifier', 'jshint', 'jscs', 'ngAnnotate', 'concat', 'removelogging', 'uglify', 'usebanner' ]);
+	grunt.registerTask('default', [ 'jasmine', 'clean', 'jsbeautifier', 'jshint', 'jscs', 'ngAnnotate', 'concat', 'removelogging', 'uglify', 'usebanner' ]);
 	grunt.registerTask('test', [ 'jasmine', 'watch:test' ]);
 };
