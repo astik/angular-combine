@@ -1,8 +1,9 @@
-/*! angular-combine - 2015-07-08 */
+/*! angular-combine - 2015-09-26 */
+(function(angular){
 'use strict';
 
 angular.module('angularCombine', []);
-
+;
 'use strict';
 
 angular.module('angularCombine').provider('angularCombineConfig', function() {
@@ -19,7 +20,7 @@ angular.module('angularCombine').provider('angularCombineConfig', function() {
 		return config;
 	};
 });
-
+;
 'use strict';
 
 angular.module('angularCombine').config(["$provide", function($provide) {
@@ -66,3 +67,5 @@ angular.module('angularCombine').config(["$provide", function($provide) {
 		return $delegate;
 	}]);
 }]);
+
+}(angular));

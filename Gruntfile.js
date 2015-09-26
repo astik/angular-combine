@@ -58,6 +58,11 @@ module.exports = function(grunt) {
 		},
 
 		concat : {
+			options: {
+				separator: ';\n',
+				banner: '(function(angular){\n',
+				footer: '\n}(angular));'
+			},
 			dist : {
 				files : {
 					'dist/angular-combine.js' : [ '.tmp/angular-combine-app.js', '.tmp/angular-combine-config.js', '.tmp/angular-combine-decorator.js' ]
