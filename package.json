@@ -1,7 +1,7 @@
 {
   "name": "angular-combine",
   "description": "Allow loading of merge templates into a single HTML file.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "https://github.com/astik/angular-combine",
   "author": {
     "name": "Romain Gonord",

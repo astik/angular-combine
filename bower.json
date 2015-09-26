@@ -1,6 +1,6 @@
 {
   "name": "angular-combine",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "./dist/angular-combine.js",
   "description": "Allow loading of merge templates into a single HTML file.",
   "keywords": [
