@@ -76,7 +76,7 @@ You'll find all the documention to use it on the [grunt-angular-combine getting 
 - 0.1.0 : initial version
 - 0.1.1 : clean release process (no new feature)
 - v0.1.3 : release process is operational with good semserv versioning (no new feature)
-- v0.1.4 : distribution available withou console (smaller files) + compatibility for Angular > 1.3.6
+- v0.1.4 : distribution available without console (smaller files) + compatibility for Angular > 1.3.6
 
 
 

@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="angularCombineViewApp">
+    <my-directive1></my-directive1>
+    <my-directive2></my-directive2>
+    <my-directive3></my-directive3>
+
+    <!-- Add your site or application content here -->
+    <div class="container" ng-view></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.14/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.14/angular-route.min.js"></script>
+    <script src="angular-combine/dist/angular-combine.js"></script>
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/directives/my-directive1.js"></script>
+    <script src="scripts/directives/my-directive2.js"></script>
+    <script src="scripts/directives/my-directive3.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

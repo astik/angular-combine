@@ -51,9 +51,10 @@ module.exports = function(grunt) {
 					open : true,
 					middleware : function(connect, options) {
 						var middlewares = [];
-						middlewares.push(connect().use('/angular-combine/dist', connect.static('../dist')));
-						middlewares.push(connect.static(config.tmp));
-						middlewares.push(connect.static(config.app));
+						var serveStatic = require('serve-static');
+						middlewares.push(connect().use('/angular-combine/dist', serveStatic('../dist')));
+						middlewares.push(serveStatic(config.tmp));
+						middlewares.push(serveStatic(config.app));
 						return middlewares;
 					}
 				}
@@ -76,6 +77,14 @@ module.exports = function(grunt) {
 					src : 'views/*',
 					dest : '<%= yeoman.tmp %>/',
 					filter : 'isDirectory'
+				},{
+					cwd : '<%= yeoman.app %>',
+					src : 'scripts/components/*.html',
+					dest : '<%= yeoman.tmp %>/views/components.html'
+				},{
+					cwd : '<%= yeoman.app %>',
+					src : 'scripts/directives/*.html',
+					dest : '<%= yeoman.tmp %>/views/directives.html'
 				} ]
 			}
 		}

@@ -7,46 +7,31 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
   <body ng-app="angularCombineViewApp">
-    <ul>
-      <li>
-        <a href="/">Root</a>
-      </li>
-      <li>
-        Admin
-        <ul>
-          <li>
-            <a href="#/admin/entity1">Entity 1</a>
-          </li>
-          <li>
-            <a href="#/admin/entity2">Entity 2</a>
-          </li>
-          <li>
-            <a href="#/admin/entity3">Entity 3</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+    <my-component1></my-component1>
+    <my-component2></my-component2>
+    <my-component3></my-component3>
 
     <!-- Add your site or application content here -->
     <div class="container" ng-view></div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-route.min.js"></script>
     <script src="angular-combine/dist/angular-combine.js"></script>
-  
+
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/app-routes.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/admin/entity1.js"></script>
     <script src="scripts/controllers/admin/entity2.js"></script>
     <script src="scripts/controllers/admin/entity3.js"></script>
+    <script src="scripts/components/my-component1.js"></script>
+    <script src="scripts/components/my-component2.js"></script>
+    <script src="scripts/components/my-component3.js"></script>
     <!-- endbuild -->
   </body>
 </html>
